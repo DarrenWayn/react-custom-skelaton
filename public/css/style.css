@@ -1,0 +1,647 @@
+@media (min-width: 280px) {
+  .responsive-test {
+    color: red;
+  }
+}
+@media (min-width: 370px) {
+  .responsive-test {
+    color: blue;
+  }
+}
+@media (min-width: 720px) {
+  .responsive-test {
+    color: green;
+  }
+}
+@media (min-width: 960px) {
+  .responsive-test {
+    color: purple;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-test {
+    color: orange;
+  }
+}
+@media (min-width: 1400px) {
+  .responsive-test {
+    color: pink;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  /* CSS Debugging */
+}
+
+/* html rules */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin & padding */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 1px;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  all: unset;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  margin: 0;
+  place-content: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+header {
+  padding: 0.75rem 0.75rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+header h1 {
+  font-weight: 300;
+  color: #6B7280;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 70px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 280px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 370px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 720px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 280px) {
+  header #new-task-form {
+    display: inline;
+  }
+}
+@media (min-width: 370px) {
+  header #new-task-form {
+    display: flex;
+  }
+}
+@media (min-width: 720px) {
+  header #new-task-form {
+    display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  header #new-task-form {
+    display: flex;
+  }
+}
+header .input-group {
+  position: relative;
+  flex: 1 1 0%;
+  margin-right: 1rem;
+}
+header .input-group input {
+  background-color: #111829;
+  align-items: center;
+  border-radius: 1rem;
+  width: 100%;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (min-width: 70px) {
+  header .input-group input {
+    padding: 1rem;
+  }
+}
+@media (min-width: 720px) {
+  header .input-group input {
+    padding: 1rem;
+  }
+}
+@media (min-width: 960px) {
+  header .input-group input {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  header .input-group input {
+    padding: 1rem;
+  }
+}
+header .input-group .task-label {
+  position: absolute;
+  left: 15px;
+  color: #6B7280;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (min-width: 70px) {
+  header .input-group .task-label {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 280px) {
+  header .input-group .task-label {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 370px) {
+  header .input-group .task-label {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 720px) {
+  header .input-group .task-label {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  header .input-group .task-label {
+    font-size: 2rem;
+  }
+}
+header .input-group #new-task-input:focus, header .input-group input:valid {
+  outline: none;
+  border: 1.5px solid #EEE;
+  font-size: 1.5rem;
+  color: #EEE;
+}
+header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: #111829;
+  padding: 0.2rem;
+  color: #EEE;
+}
+@media (min-width: 70px) {
+  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 280px) {
+  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+    transform: translateY(-50%) scale(0.7);
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 370px) {
+  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 720px) {
+  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+    font-size: 2rem;
+  }
+}
+header .header-actions {
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+}
+header .header-actions #new-task-submit {
+  color: #EC4899;
+  font-weight: 700;
+  margin-right: 0.3rem;
+  color: crimson;
+  cursor: pointer;
+  transition: 0.4s;
+}
+header .header-actions #new-task-submit:hover {
+  opacity: 0.8;
+}
+header .header-actions #new-task-submit:active {
+  opacity: 0.6;
+}
+@media (min-width: 70px) {
+  header .header-actions #new-task-submit {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+}
+@media (min-width: 280px) {
+  header .header-actions #new-task-submit {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 370px) {
+  header .header-actions #new-task-submit {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 720px) {
+  header .header-actions #new-task-submit {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  header .header-actions #new-task-submit {
+    font-size: 2rem;
+  }
+}
+header .header-actions #fontCancel {
+  font-size: 1.2rem;
+  color: #EC4899;
+  font-weight: 700;
+  align-items: center;
+  background-image: -webkit-linear-gradient(right, #EC4899, #885CF6);
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+@media (min-width: 70px) {
+  header .header-actions #fontCancel {
+    margin: 0px;
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 280px) {
+  header .header-actions #fontCancel {
+    margin: 0px;
+    font-size: 0.8rem;
+  }
+}
+header .header-actions #fontCancel:hover {
+  opacity: 0.8;
+}
+header .header-actions #fontCancel:active {
+  opacity: 0.6;
+}
+header .header-actions #fontSave {
+  font-size: 1.2rem;
+  color: #EC4899;
+  font-weight: 700;
+  align-items: center;
+  margin: 1rem 1.5rem;
+  color: crimson;
+  cursor: pointer;
+  transition: 0.4s;
+}
+@media (min-width: 70px) {
+  header .header-actions #fontSave {
+    margin: 0 0.7rem;
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 280px) {
+  header .header-actions #fontSave {
+    margin: 0 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+header .header-actions #fontSave:hover {
+  opacity: 0.8;
+}
+header .header-actions #fontSave:active {
+  opacity: 0.6;
+}
+
+.categories-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.category-container {
+  min-width: 30%;
+  height: 240px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
+}
+.category-container:hover {
+  cursor: pointer;
+}
+.category-container:hover .background-image {
+  transform: scale(1.1);
+  transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+.category-container:hover .category-body-container {
+  opacity: 0.9;
+}
+.category-container.large {
+  height: 380px;
+}
+.category-container:first-child {
+  margin-right: 7.5px;
+}
+.category-container:last-child {
+  margin-left: 7.5px;
+}
+.category-container .background-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.category-container .category-body-container {
+  height: 90px;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: white;
+  opacity: 0.7;
+  position: absolute;
+}
+.category-container .category-body-container h2 {
+  font-weight: bold;
+  margin: 0 6px 0;
+  font-size: 22px;
+  color: #4a4a4a;
+}
+.category-container .category-body-container p {
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+main {
+  flex: 1 1 0%;
+  padding: 2.25rem 0.75rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+main h2 {
+  font-weight: 300;
+  color: #6B7280;
+  margin-bottom: 1rem;
+}
+@media (min-width: 70px) {
+  main h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 280px) {
+  main h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 370px) {
+  main h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 720px) {
+  main h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  main h2 {
+    font-size: 2rem;
+  }
+}
+main #tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  -webkit-animation: task 500ms ease-in 100ms both;
+  animation: task 500ms ease-in 100ms both;
+}
+@-webkit-keyframes task {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes task {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@media (min-width: 70px) {
+  main #tasks .task {
+    padding: 0.5rem;
+  }
+}
+@media (min-width: 280px) {
+  main #tasks .task {
+    padding: 0.8rem;
+  }
+}
+main #tasks .task .content .text {
+  color: #EEE;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+@media (min-width: 70px) {
+  main #tasks .task .content .text {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 280px) {
+  main #tasks .task .content .text {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 370px) {
+  main #tasks .task .content .text {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 720px) {
+  main #tasks .task .content .text {
+    font-size: 1.5rem;
+  }
+}
+main #tasks .task:not(:-moz-read-only) {
+  color: #EC4899;
+}
+main #tasks .task:not(:read-only) {
+  color: #EC4899;
+}
+main #tasks .task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+main #tasks .task button {
+  cursor: pointer;
+  margin: 0 -0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+main #tasks .task:hover {
+  opacity: 0.8s;
+}
+main #tasks .task:active {
+  opacity: 0.6s;
+}
+main #tasks .task .edit {
+  color: crimson;
+  padding-right: 1.8rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 70px) {
+  main #tasks .task .edit {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 280px) {
+  main #tasks .task .edit {
+    padding-right: 2rem;
+    font-size: 0.9rem;
+  }
+}
+main #tasks .task .delete {
+  color: crimson;
+  padding-right: 1.5rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 70px) {
+  main #tasks .task .delete {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 280px) {
+  main #tasks .task .delete {
+    padding-right: 2rem;
+    font-size: 0.9rem;
+  }
+}
+main #tasks .task .delete:focus-within {
+  -webkit-animation: text-blur-out 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-blur-out 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+@keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}

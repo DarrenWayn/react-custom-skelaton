@@ -1,0 +1,61 @@
+// Theme colors
+$dark: #374151 !default;
+$darker: #111829 !default;
+$darkest: #111 !default;
+$gray: #6B7280 !default;
+$light: #EEE !default;
+$pink: #EC4899 !default;
+$purple: #885CF6 !default;
+
+// color palette
+$colors: (
+    'dark' : $dark,
+    'darker' : $darker,
+    'darkest' : $darkest,
+    'light' : $light,
+    'pink' : $pink,
+    'purple' : $purple,
+);
+
+$text-gradient-list: $pink, $purple;
+
+
+@mixin text-gradient($direction, $list) { 
+    background-image: -webkit-linear-gradient($direction, $text-gradient-list);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+// Spacing
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// Borders
+$base-border-thickness: 1rem !default;
+$base-border-radius: 2rem !default;
+
+// Box Shadows 
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
+
+// Font Sizes
+$base-font-size: 1rem !default;
+$clamp-font-sze: clamp(1rem, 1.5rem, 2rem);
+$clamp-input-font-sze: clamp(0rem, 1.5rem, 2rem);
+$font-size-sm: $base-font-size * 0.75 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-md: $base-font-size * 1.8 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default;
+
+// @debug map-get($colors, "purple");
+
+// // does colors have a secondary key? is it true?
+// @debug map-has-key($colors, 'secondary');
+// @debug map-has-key($colors, 'tertiary');
+
+// // remove value on the map
+// @debug map-remove($colors, 'primary');
+
+// // added new value to the map
+// @debug map-merge($colors, ('pink': pink));

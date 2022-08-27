@@ -1,0 +1,50 @@
+@mixin task-keyframe {
+    @-webkit-keyframes task {
+        0% {
+            -webkit-filter: blur(12px);
+                    filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+                    filter: blur(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes task {
+        0% {
+            -webkit-filter: blur(12px);
+                    filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+                    filter: blur(0px);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin task-delete {
+    @-webkit-keyframes text-blur-out {
+        0% {
+          -webkit-filter: blur(0.01);
+                  filter: blur(0.01);
+        }
+        100% {
+          -webkit-filter: blur(12px) opacity(0%);
+                  filter: blur(12px) opacity(0%);
+        }
+      }
+      @keyframes text-blur-out {
+        0% {
+          -webkit-filter: blur(0.01);
+                  filter: blur(0.01);
+        }
+        100% {
+          -webkit-filter: blur(12px) opacity(0%);
+                  filter: blur(12px) opacity(0%);
+        }
+      }
+}
+  
