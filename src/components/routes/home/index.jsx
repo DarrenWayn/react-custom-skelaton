@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import categories from './data.jsx';
+import categories from './data';
 
 const Home = () => {
   return (
