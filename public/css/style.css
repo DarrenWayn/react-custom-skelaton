@@ -122,266 +122,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-header {
-  padding: 0.75rem 0.75rem;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
-header h1 {
-  font-weight: 300;
-  color: #6B7280;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-@media (min-width: 70px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 280px) {
-  header h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 370px) {
-  header h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 720px) {
-  header h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  header h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 280px) {
-  header #new-task-form {
-    display: inline;
-  }
-}
-@media (min-width: 370px) {
-  header #new-task-form {
-    display: flex;
-  }
-}
-@media (min-width: 720px) {
-  header #new-task-form {
-    display: flex;
-  }
-}
-@media (min-width: 1200px) {
-  header #new-task-form {
-    display: flex;
-  }
-}
-header .input-group {
-  position: relative;
-  flex: 1 1 0%;
-  margin-right: 1rem;
-}
-header .input-group input {
-  background-color: #111829;
-  align-items: center;
-  border-radius: 1rem;
-  width: 100%;
-  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media (min-width: 70px) {
-  header .input-group input {
-    padding: 1rem;
-  }
-}
-@media (min-width: 720px) {
-  header .input-group input {
-    padding: 1rem;
-  }
-}
-@media (min-width: 960px) {
-  header .input-group input {
-    padding: 1rem;
-  }
-}
-@media (min-width: 1200px) {
-  header .input-group input {
-    padding: 1rem;
-  }
-}
-header .input-group .task-label {
-  position: absolute;
-  left: 15px;
-  color: #6B7280;
-  pointer-events: none;
-  transform: translateY(1rem);
-  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media (min-width: 70px) {
-  header .input-group .task-label {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 280px) {
-  header .input-group .task-label {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 370px) {
-  header .input-group .task-label {
-    font-size: 1.2rem;
-  }
-}
-@media (min-width: 720px) {
-  header .input-group .task-label {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  header .input-group .task-label {
-    font-size: 2rem;
-  }
-}
-header .input-group #new-task-input:focus, header .input-group input:valid {
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
   outline: none;
-  border: 1.5px solid #EEE;
-  font-size: 1.5rem;
-  color: #EEE;
+  background: none;
 }
-header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-  transform: translateY(-50%) scale(0.8);
-  background-color: #111829;
-  padding: 0.2rem;
-  color: #EEE;
+
+.navigation {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
-@media (min-width: 70px) {
-  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-    font-size: 1rem;
-  }
+.navigation .logo-container {
+  height: 100%;
+  width: 70px;
+  padding: 25px;
 }
-@media (min-width: 280px) {
-  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-    transform: translateY(-50%) scale(0.7);
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 370px) {
-  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 720px) {
-  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
-    font-size: 2rem;
-  }
-}
-header .header-actions {
-  margin-right: 1rem;
-  margin-top: 0.7rem;
-}
-header .header-actions #new-task-submit {
-  color: #EC4899;
-  font-weight: 700;
-  margin-right: 0.3rem;
-  color: crimson;
-  cursor: pointer;
-  transition: 0.4s;
-}
-header .header-actions #new-task-submit:hover {
-  opacity: 0.8;
-}
-header .header-actions #new-task-submit:active {
-  opacity: 0.6;
-}
-@media (min-width: 70px) {
-  header .header-actions #new-task-submit {
-    font-size: 1rem;
-    margin-top: 0.3rem;
-  }
-}
-@media (min-width: 280px) {
-  header .header-actions #new-task-submit {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 370px) {
-  header .header-actions #new-task-submit {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 720px) {
-  header .header-actions #new-task-submit {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  header .header-actions #new-task-submit {
-    font-size: 2rem;
-  }
-}
-header .header-actions #fontCancel {
-  font-size: 1.2rem;
-  color: #EC4899;
-  font-weight: 700;
+.navigation .nav-links-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
   align-items: center;
-  background-image: -webkit-linear-gradient(right, #EC4899, #885CF6);
-  -webkit-background-clip: text;
-  color: transparent;
+  justify-content: flex-end;
+}
+.navigation .nav-links-container .nav-link {
+  padding: 10px 15px;
   cursor: pointer;
-  transition: 0.4s;
-}
-@media (min-width: 70px) {
-  header .header-actions #fontCancel {
-    margin: 0px;
-    font-size: 0.5rem;
-  }
-}
-@media (min-width: 280px) {
-  header .header-actions #fontCancel {
-    margin: 0px;
-    font-size: 0.8rem;
-  }
-}
-header .header-actions #fontCancel:hover {
-  opacity: 0.8;
-}
-header .header-actions #fontCancel:active {
-  opacity: 0.6;
-}
-header .header-actions #fontSave {
-  font-size: 1.2rem;
-  color: #EC4899;
-  font-weight: 700;
-  align-items: center;
-  margin: 1rem 1.5rem;
-  color: crimson;
-  cursor: pointer;
-  transition: 0.4s;
-}
-@media (min-width: 70px) {
-  header .header-actions #fontSave {
-    margin: 0 0.7rem;
-    font-size: 0.5rem;
-  }
-}
-@media (min-width: 280px) {
-  header .header-actions #fontSave {
-    margin: 0 0.7rem;
-    font-size: 0.8rem;
-  }
-}
-header .header-actions #fontSave:hover {
-  opacity: 0.8;
-}
-header .header-actions #fontSave:active {
-  opacity: 0.6;
 }
 
 .categories-container {
@@ -635,13 +406,4 @@ main #tasks .task .delete:focus-within {
     -webkit-filter: blur(12px) opacity(0%);
     filter: blur(12px) opacity(0%);
   }
-}
-
-input, button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
-  background: none;
 }
