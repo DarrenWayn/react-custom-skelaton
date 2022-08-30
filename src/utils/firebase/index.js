@@ -26,8 +26,8 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
 // Call google provider
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
   prompt: 'select_account',
 });
 
@@ -36,7 +36,10 @@ export const auth = getAuth();
 
 // signInWithPopup that pass 2 argument which is auth and provider
 // and store in signInWithGooglePopup variable and exported
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () =>
+  signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 
@@ -48,11 +51,11 @@ export const createUserDocumentFromAuth = async userAuth => {
   console.log(userSnapshot);
   console.log(userSnapshot.exists());
 
-  // if user data exists or not using ! operator which return boolean true or false
   const { displayName, email } = userAuth;
   const createdAt = new Date();
   const error = 'error createing the user';
 
+  // if user data exists or not using ! operator which return boolean true or false
   !userSnapshot.exists()
     ? await setDoc(userDocRef, { displayName, email, createdAt })
     : console.log(error);
