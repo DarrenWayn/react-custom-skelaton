@@ -8,6 +8,8 @@ import {
 } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyC5IyLNyRPW67pD4f8qICDjuLZkVgDhJ0Y',
@@ -35,3 +37,25 @@ export const auth = getAuth();
 // signInWithPopup that pass 2 argument which is auth and provider
 // and store in signInWithGooglePopup variable and exported
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+export const db = getFirestore();
+
+export const createUserDocumentFromAuth = async userAuth => {
+  const userDocRef = doc(db, 'users', userAuth.uid);
+  console.log(userDocRef);
+
+  const userSnapshot = await getDoc(userDocRef);
+  console.log(userSnapshot);
+  console.log(userSnapshot.exists());
+
+  // if user data exists or not using ! operator which return boolean true or false
+  const { displayName, email } = userAuth;
+  const createdAt = new Date();
+  const error = 'error createing the user';
+
+  !userSnapshot.exists()
+    ? await setDoc(userDocRef, { displayName, email, createdAt })
+    : console.log(error);
+
+  return userDocRef;
+};
