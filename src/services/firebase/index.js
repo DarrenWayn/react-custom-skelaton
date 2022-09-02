@@ -5,6 +5,7 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,6 +45,8 @@ export const signInWithGoogleRedirect = () =>
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async userAuth => {
+  if (!userAuth) return;
+  // if we don't get the userAuth we don't want this to run
   const userDocRef = doc(db, 'users', userAuth.uid);
   console.log(userDocRef);
 
@@ -61,4 +64,10 @@ export const createUserDocumentFromAuth = async userAuth => {
     : console.log(error);
 
   return userDocRef;
+};
+
+export const createAuthUserWithEmailAndPassword = async (email, pass) => {
+  if (!email || !pass) return;
+  // this method will never call if theres not email and pass
+  return await createUserWithEmailAndPassword(auth, email, pass);
 };
