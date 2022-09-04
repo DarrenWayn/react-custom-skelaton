@@ -2,10 +2,8 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as CrownLogo } from '../../../assets/crown.svg';
-import useForm from '../register/hooks/useForm';
 
-const Navigation = () => {
-  const { submit, values } = useForm();
+const Router = () => {
   return (
     <>
       <div className="navigation">
@@ -17,7 +15,7 @@ const Navigation = () => {
             SHOP
           </Link>
           <Link className="nav-link" to="/authentication">
-            {!submit ? 'SIGN IN ' : values.displayName}
+            SIGN IN
           </Link>
         </div>
       </div>
@@ -26,4 +24,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Router;

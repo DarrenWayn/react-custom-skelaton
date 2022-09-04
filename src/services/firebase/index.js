@@ -39,35 +39,51 @@ export const auth = getAuth();
 // and store in signInWithGooglePopup variable and exported
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
+
+// signInWithRedirect that pass 2 argument which is auth and provider
+// and store in signInWithGoogleRedirect variable and exported
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
 
+// get the database from firestore
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async userAuth => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInfo = {}
+) => {
   if (!userAuth) return;
   // if we don't get the userAuth we don't want this to run
   const userDocRef = doc(db, 'users', userAuth.uid);
-  console.log(userDocRef);
+  // console.log(userDocRef);
 
   const userSnapshot = await getDoc(userDocRef);
-  console.log(userSnapshot);
-  console.log(userSnapshot.exists());
+  // console.log(userSnapshot);
+  // console.log(userSnapshot.exists());
 
+  // destructure userAuth Object
   const { displayName, email } = userAuth;
+
+  // Declare variable
   const createdAt = new Date();
   const error = 'error createing the user';
 
-  // if user data exists or not using ! operator which return boolean true or false
+  // if user data exists or not using ! operator
+  // which return boolean true or false
   !userSnapshot.exists()
-    ? await setDoc(userDocRef, { displayName, email, createdAt })
+    ? await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...additionalInfo,
+      })
     : console.log(error);
 
   return userDocRef;
 };
 
-export const createAuthUserWithEmailAndPassword = async (email, pass) => {
-  if (!email || !pass) return;
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
   // this method will never call if theres not email and pass
-  return await createUserWithEmailAndPassword(auth, email, pass);
+  return await createUserWithEmailAndPassword(auth, email, password);
 };

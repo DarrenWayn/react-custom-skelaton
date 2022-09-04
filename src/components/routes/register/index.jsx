@@ -1,18 +1,25 @@
 import React from 'react';
 import Input from './components/input';
-import Home from '../home';
 import useForm from './hooks/useForm';
-
-import { createAuthUserWithEmailAndPassword } from '../../../services/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const { submit, handleSubmit } = useForm();
+  let navigate = useNavigate();
+  const onPress = () => navigate('Routes', { displayValues });
+  const { values, displayValues, inputForms, handleChange, handleSubmit } =
+    useForm();
   return (
-    <div>
+    <div className="register">
       <h1>Sign Up with your email and password</h1>
       <form onSubmit={handleSubmit}>
-        {!submit ? <Input /> : <Home />}
-        <button type="submit">Sign Up</button>
+        <Input
+          values={values}
+          handleChange={handleChange}
+          inputForms={inputForms}
+        />
+        <button type="submit" onPress={onPress}>
+          Sign Up
+        </button>
       </form>
     </div>
   );

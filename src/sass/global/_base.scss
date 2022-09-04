@@ -69,6 +69,20 @@ a {
   all: unset;
 }
 
+input:invalid[focused='true'] {
+  border: 2px solid red;
+}
+
+input:invalid[focused='true'] ~ span {
+  display: block;
+}
+
+span {
+  font-size: 0.7rem;
+  color: red;
+  display: none;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
