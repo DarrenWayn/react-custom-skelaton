@@ -14,7 +14,7 @@ const Router = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          <Link className="nav-link" to="/authentication">
+          <Link className="nav-link" to="/form-input">
             SIGN IN
           </Link>
         </div>
