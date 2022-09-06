@@ -2,8 +2,16 @@ import React from 'react';
 import Input from './components/input';
 import useForm from './hooks/useForm';
 
+const defaultValue = {
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+};
+
 const Register = () => {
-  const { values, inputForms, handleChange, handleSubmit } = useForm();
+  const { values, inputForms, handleChange, handleSubmit } =
+    useForm(defaultValue);
   return (
     <>
       <h2>Don't have an account?</h2>

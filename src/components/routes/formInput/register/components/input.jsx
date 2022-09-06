@@ -1,16 +1,21 @@
 import React from 'react';
 
 const Input = props => {
-  const { values, handleChange, inputForms } = props;
+  const { handleChange, inputForms } = props;
   return (
-    <div className="group">
-      {inputForms.map(input => (
-        <>
+    <>
+      {inputForms.map((input, index) => (
+        <div className="group">
           <input
             className="form-input"
+            key={index}
             {...input}
-            value={values[input.value]}
+            // name={input.name}
+            // type={input.type}
+            // title={input.title}
+            // value={values[input.value]}
             onChange={handleChange}
+            required
           />
           {input.label && (
             <label
@@ -21,9 +26,9 @@ const Input = props => {
               {input.label}
             </label>
           )}
-        </>
+        </div>
       ))}
-    </div>
+    </>
   );
 };
 

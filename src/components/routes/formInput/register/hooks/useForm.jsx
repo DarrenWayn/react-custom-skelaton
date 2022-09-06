@@ -6,17 +6,10 @@ import {
   createUserDocumentFromAuth,
 } from '../../../../../services/firebase';
 
-const defaultValue = {
-  displayName: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
-};
-
-const useForm = () => {
+const useForm = data => {
   // let navigate = useNavigate();
   // const [displayValues, setDisplayValues] = useState('');
-  const [values, setValues] = useState(defaultValue);
+  const [values, setValues] = useState(data);
   const { displayName, email, password, confirmPassword } = values;
   console.log(values);
 
@@ -30,7 +23,6 @@ const useForm = () => {
       title:
         "Username should be 3-16 characters and shouldn't include any special character!",
       // pattern: '^[A-Za-z0-9]{3,16}$',
-      required: true,
       type: 'text',
     },
     {
@@ -40,7 +32,6 @@ const useForm = () => {
       value: email,
       // placeholder: 'your email here...',
       title: 'It should be a valid email address!',
-      required: true,
       // pattern: '[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}',
       type: 'email',
     },
@@ -52,7 +43,6 @@ const useForm = () => {
       title: 'Must be at least 6 characters',
       // pattern: '[a-zA-Z0-9]{8,}',
       value: password,
-      required: true,
       type: 'password',
     },
     {
@@ -64,13 +54,12 @@ const useForm = () => {
         ? 'You\r password don\t match'
         : 'Confirm your password',
       value: confirmPassword,
-      required: true,
       type: 'password',
       pattern: values.password,
     },
   ];
 
-  const resetValues = () => setValues(defaultValue);
+  const resetValues = () => setValues(data);
 
   const handleSubmit = async e => {
     e.preventDefault();
