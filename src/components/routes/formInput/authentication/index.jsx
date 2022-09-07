@@ -7,6 +7,7 @@ import {
   createUserDocumentFromAuth,
   // signInWithGoogleRedirect,
 } from '../../../../services/firebase';
+import Button from '../../../button';
 
 const Authentication = () => {
   const getUseDocRef = async user => await createUserDocumentFromAuth(user);
@@ -25,17 +26,19 @@ const Authentication = () => {
   };
 
   return (
-    <>
+    <div className="authentication-container">
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
 
-      <button onClick={logGoogleUser}>Sign in with Google Pop up</button>
+      <Button buttonType="google" onClick={logGoogleUser}>
+        Sign in with Google Pop up
+      </Button>
       {/* <button onClick={signInWithGoogleRedirect}>
         Sign in with Google Redirect
       </div>
       
       </button> */}
-    </>
+    </div>
   );
 };
 

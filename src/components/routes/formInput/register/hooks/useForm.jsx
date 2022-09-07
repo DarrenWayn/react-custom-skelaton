@@ -22,7 +22,7 @@ const useForm = data => {
       // placeholder: 'your name here...',
       title:
         "Username should be 3-16 characters and shouldn't include any special character!",
-      // pattern: '^[A-Za-z0-9]{3,16}$',
+      pattern: '^[A-Za-z0-9]{3,16}$',
       type: 'text',
     },
     {
@@ -32,7 +32,7 @@ const useForm = data => {
       value: email,
       // placeholder: 'your email here...',
       title: 'It should be a valid email address!',
-      // pattern: '[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}',
+      pattern: '[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}',
       type: 'email',
     },
     {
@@ -41,7 +41,7 @@ const useForm = data => {
       name: 'password',
       // placeholder: 'Enter Password...',
       title: 'Must be at least 6 characters',
-      // pattern: '[a-zA-Z0-9]{8,}',
+      pattern: '[a-zA-Z0-9]{8,}',
       value: password,
       type: 'password',
     },
