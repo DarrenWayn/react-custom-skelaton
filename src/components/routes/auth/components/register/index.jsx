@@ -1,11 +1,11 @@
 import React from 'react';
-import Input from './components/input';
-import useForm from './hooks/useForm';
-import Button from '../../../button';
-import defaultRegisterValue from './constant';
+import Input from '../input';
+import useForm from '../../hooks/useForm';
+import Button from '../../../../button';
+import defaultRegisterValue from '../../constant/registerValue';
 
 const Register = () => {
-  const { values, inputForms, handleChange, handleSubmit } =
+  const { values, registerInputFormValue, handleChange, handleSubmit } =
     useForm(defaultRegisterValue);
   return (
     <div className="register-container">
@@ -15,8 +15,11 @@ const Register = () => {
         <Input
           values={values}
           handleChange={handleChange}
-          inputForms={inputForms}
+          inputForms={registerInputFormValue}
         />
+        {/* <Button buttonType="inverted" type="submit">
+          Sign Up
+        </Button> */}
         <Button buttonType="inverted" type="submit">
           Sign Up
         </Button>

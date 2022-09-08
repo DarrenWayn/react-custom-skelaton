@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -58,8 +59,8 @@ export const createUserDocumentFromAuth = async (
   // console.log(userDocRef);
 
   const userSnapshot = await getDoc(userDocRef);
-  // console.log(userSnapshot);
-  // console.log(userSnapshot.exists());
+  console.log(userSnapshot);
+  console.log(userSnapshot.exists());
 
   // destructure userAuth Object
   const { displayName, email } = userAuth;
@@ -86,4 +87,10 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   // this method will never call if theres not email and pass
   return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+  // this method will never call if theres not email and pass
+  return await signInWithEmailAndPassword(auth, email, password);
 };

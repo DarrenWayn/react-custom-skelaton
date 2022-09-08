@@ -1,8 +1,8 @@
-const defaultRegisterValue = {
+const defaultRegisterValues = {
   displayName: '',
   email: '',
   password: '',
   confirmPassword: '',
 };
 
-export default defaultRegisterValue;
+export default defaultRegisterValues;

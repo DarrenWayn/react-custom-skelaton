@@ -3,12 +3,12 @@ import BUTTON_TYPE_CLASSES from './constant';
 
 const Button = ({ children, buttonType, ...otherProps }) => {
   return (
-    <div
+    <button
       className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
       {...otherProps}
     >
       {children}
-    </div>
+    </button>
   );
 };
 

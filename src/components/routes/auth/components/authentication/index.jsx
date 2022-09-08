@@ -6,10 +6,15 @@ import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   // signInWithGoogleRedirect,
-} from '../../../../services/firebase';
-import Button from '../../../button';
+} from '../../../../../services/firebase';
+import useForm from '../../hooks/useForm';
+import defaultAuthenticationValue from '../../constant/authenticationValue';
+import Input from '../input';
+import Button from '../../../../button';
 
 const Authentication = () => {
+  const { values, AuthenticationInputFormValue, handleChange, signIn } =
+    useForm(defaultAuthenticationValue);
   const getUseDocRef = async user => await createUserDocumentFromAuth(user);
   // const getResponse = async () => {
   //   const response = await getRedirectResult(auth);
@@ -29,15 +34,19 @@ const Authentication = () => {
     <div className="authentication-container">
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
-
-      <Button buttonType="google" onClick={logGoogleUser}>
-        Sign in with Google Pop up
-      </Button>
-      {/* <button onClick={signInWithGoogleRedirect}>
-        Sign in with Google Redirect
-      </div>
-      
-      </button> */}
+      <form onClick={signIn}>
+        <Input
+          values={values}
+          handleChange={handleChange}
+          inputForms={AuthenticationInputFormValue}
+        />
+        <div className="buttons-container">
+          <Button type="submit">Sign In</Button>
+          <Button buttonType="google" onClick={logGoogleUser}>
+            Google Sign In
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };
